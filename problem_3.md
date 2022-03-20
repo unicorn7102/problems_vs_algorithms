@@ -1,0 +1,1 @@
+The key step of the algorithm is to sort the list from largest to smallest, then the two integers can be extracted by properly collecting elements from the sorted list. Because we use merge sort here and the final step after the sorting is a constant time operation, so the algorithm is having a time complexity of $O(nlog(n))$.

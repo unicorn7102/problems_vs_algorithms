@@ -1,0 +1,1 @@
+Very similarly to Problem_5, the time complexity of adding or finding handler for a path is constant with respect to the number of paths already added to the Trie ($n$); it only increases linearly with the length of the path (after splitting by '/') being added or searched. 
