@@ -1,0 +1,35 @@
+Let $m$ be the (average) length of the words; 
+Let $n$ be the number of words added to the Trie. 
+And assume $n>>m$ in most practical cases.
+
+Method 1 [TrieNode.insert]:
+1) time complexity: $O(1)$ because searching / adding by dictionary key takes constant time.
+2) space complexity: $O(1)$ because no auxiliary space is taken.
+
+Method 2 [TrieNode.suffixes]:
+1) time complexity: $O(n)$ if we assume $m<<n$; the (worst-case) time complexity 
+is $O(n m)$ because there is a traversal of all children of the prefix node and 
+in the worst case it loops over all characters in each word in the trie. 
+2) space complexity: $O(n)$ if we assume $m<<n$; the suffixes function is called recursively and 
+the space needed for the call stack is approximately $O(n m)$ in the worst case. 
+New space is also used for holding the results - a list of possible suffixes, the complexity is $O(n)$ as well.
+
+Method 3 [Trie.insert]:
+1) time complexity: $O(1)$ if we assume $m<<n$; characters in word are added sequentially, so 
+the time only increases linearly with $m$. Inside the loop, we called TrieNode.insert method,
+which takes constant time. It also takes constant time to set value for is_word.
+2) space complexity: $O(1)$ because no auxiliary space is used.
+
+Method 4 [Trie.find]:
+1) time complexity: $O(1)$ if we assume $m<<n$; characters in word are checked sequentially, so 
+the time only increases linearly with $m$. Inside the loop, looking up by dictionary key takes 
+constant time.
+2) space complexity: $O(1)$ because no auxiliary space is used.
+
+Method 5 [TrieNode.init]:
+1) time complexity: $O(1)$
+2) space complexity : $O(1)$
+
+Method 6 [Trie.init]:
+1) time complexity: $O(1)$
+2) space complexity : $O(1)$

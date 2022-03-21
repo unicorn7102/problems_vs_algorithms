@@ -1,0 +1,45 @@
+Let $m$ be the (average) length of the path after splitted by '/'; 
+Let $n$ be the number of paths added to the Trie. 
+And assume $n>>m$ in most practical cases.
+
+Method 1 [RouteTrieNode.insert]:
+1) time complexity: $O(1)$ because searching / adding by dictionary key takes constant time.
+2) space complexity: $O(1)$ because no axuxiliary space is taken.
+
+Method 2 [RouteTrie.insert]:
+1) time complexity: $O(1)$ if we assume $m<<n$; components in paths are added sequentially, so 
+the time only increases linearly with $m$. Inside the loop, we called RouteTrieNode.insert method,
+which takes constant time. It also takes constant time to set the handler.
+2) space complexity: $O(1)$ because no axuxiliary space is used.
+
+Method 3 [RouteTrie.find]:
+1) time complexity: $O(1)$ if we assume $m<<n$; components in paths are checked sequentially, so 
+the time only increases linearly with $m$. Inside the loop, looking up by dictionary key takes 
+constant time.
+2) space complexity: $O(1)$ because no axuxiliary space is used.
+
+Method 4 [Router.splitpath]:
+1) time complexity: $O(N)$ where $N$ is the number of characters in the orginal path string.
+2) space complexity: $O(m)$ because new space is needed to hold the splitted paths.
+
+Method 5 [Router.add_handler]:
+1) time complexity: $O(1)$ if we assume $m<<n$ and $N<<n$, since Method 2 [RouteTrie.insert] and
+Method 4 [Router.splitpath] are called here.
+2) space complexity: $O(1)$ if we assume $m<<n$.
+
+Method 6 [Router.lookup]:
+1) time complexity: $O(1)$ if we assume $m<<n$ and $N<<n$, since Method 3 [RouteTrie.find] and
+Method 4 [Router.splitpath] are called here.
+2) space complexity: $O(1)$ if we assume $m<<n$.
+
+Method 7 [RouteTrieNode.init]:
+1) time complexity: $O(1)$
+2) space complexity : $O(1)$
+
+Method 8 [RouteTrie.init]:
+1) time complexity: $O(1)$
+2) space complexity : $O(1)$
+
+Method 9 [Router.init]:
+1) time complexity: $O(1)$
+2) space complexity : $O(1)$

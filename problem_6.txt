@@ -1,0 +1,3 @@
+The algorithm finds min and max integers in single traversal, 
+so the time complexity is $O(n)$.
+No extra space is used during the search so the space complexity is $O(1)$.

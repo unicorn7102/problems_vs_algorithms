@@ -1,0 +1,3 @@
+We sort the array with a single traversal by keeping track of the next index for 0 and the next index for 2,
+and swapping the elements accordingly. Therefore the time complexity is $O(n)$.
+The space complexity is constant since no extra space is used.

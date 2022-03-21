@@ -1,0 +1,8 @@
+It is natural to choose the binary search algorithm, 
+which has time complexity of $O(log(n))$ for this problem, because 
+1) the array to be searched is naturally sorted, which contains the consective numbers 
+from 0 to the target number; 
+2) searching for a squared root of a number essentially has no difference from searching 
+for the target number itself: we simply need to do a square calculation in each comparison.
+The space complexity is $O(log(n))$ because recursion is used and extra space is needed for 
+holding a call stack of size $O(log(n))$.
