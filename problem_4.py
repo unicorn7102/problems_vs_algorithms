@@ -5,20 +5,24 @@ def sort_012(input_list):
     Args:
        input_list(list): List to be sorted
     """
-    zero_count = 0
-    one_count = 0
-    output_list = [2] * len(input_list)
-    
-    for e in input_list:
-        if e == 0:
-            zero_count += 1
-        elif e == 1:
-            one_count += 1
-            
-    output_list[0:zero_count] = [0]*zero_count
-    output_list[zero_count:zero_count+one_count] = [1]*one_count
+    next_pos_0 = 0
+    next_pos_2 = len(input_list) - 1
 
-    return output_list
+    front_index = 0
+
+    while front_index <= next_pos_2:
+        if input_list[front_index] == 0:
+            input_list[front_index] = input_list[next_pos_0]
+            input_list[next_pos_0] = 0
+            next_pos_0 += 1
+            front_index += 1
+        elif input_list[front_index] == 2:           
+            input_list[front_index] = input_list[next_pos_2] 
+            input_list[next_pos_2] = 2
+            next_pos_2 -= 1
+        else:
+            front_index += 1
+    return input_list
 
 def test_function(test_case):
     sorted_array = sort_012(test_case)

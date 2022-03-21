@@ -1,1 +1,0 @@
-Since we know that the input array is consisting of only 0, 1, and 2, we can simply count the numbers of 0's and 1's with single traversal and then construct the output array with the same number counts in the right order.

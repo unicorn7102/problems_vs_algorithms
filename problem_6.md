@@ -1,1 +1,0 @@
-The algorithm finds min and max integers in single traversal, so the time complexity is $O(n)$.

@@ -29,6 +29,12 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
+    if number is None:
+        return -1
+    
+    if input_list is None or len(input_list) < 1:
+        return -1
+    
     return binary_search_rotate(input_list, number, 0, len(input_list)-1)
 
 def linear_search(input_list, number):
@@ -47,6 +53,9 @@ def test_function(test_case):
 
 
 if __name__ == "__main__":
+    test_function([[], 10])
+    test_function([[1, 2], None])
+    test_function([[6, 7, 8, 1, 2, 3, 4], 10])
     test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
     test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
     test_function([[6, 7, 8, 1, 2, 3, 4], 8])

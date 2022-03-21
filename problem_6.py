@@ -5,7 +5,7 @@ def get_min_max(ints):
     Args:
        ints(list): list of integers containing one or more integers
     """
-    if len(ints) < 1:
+    if ints is None or len(ints) < 1:
         return (None, None)
     
     minimum, maximum = ints[0], ints[0]
@@ -18,7 +18,7 @@ def get_min_max(ints):
     return (minimum, maximum)
 
 def test_function(l):
-    if len(l) < 1:
+    if l is None or len(l) < 1:
         print ("Pass" if ((None, None) == get_min_max(l)) else "Fail")
     else:
         print ("Pass" if ((min(l), max(l)) == get_min_max(l)) else "Fail")
@@ -33,4 +33,5 @@ if __name__ == "__main__":
     test_function(l)
     test_function([1])
     test_function([])
+    test_function(None)
 
